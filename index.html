@@ -3,140 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Контактная информация Гусева Евгения Александровича">
     <title>Гусев Евгений Александрович</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" media="print" onload="this.media='all'">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+        :root {
+            --primary-start: #2c3e50;
+            --primary-end: #34495e;
+            --bg-gradient-start: #f8f9fa;
+            --bg-gradient-end: #e9ecef;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --text-light: #dcdde1;
+            --white: #ffffff;
+            --border-color: #ced4da;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 20px;
+            --transition: 0.3s ease;
+            --focus-ring: 0 0 0 3px rgba(44,62,80,0.2);
         }
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
             line-height: 1.6;
-            color: #333;
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem;
+            width: 100%;
         }
         header {
             text-align: center;
-            margin-bottom: 2rem;
-            padding: 2rem 0;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            padding: 1.5rem 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            color: var(--white);
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: 1.5rem;
+        }
+        .profile-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .profile-img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--white);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: var(--white);
         }
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
         }
         header h2 {
-            font-size: 1.5rem;
-            color: #dcdde1;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 400;
+            margin: 0.25rem 0 0;
+            opacity: 0.95;
         }
         .main-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            flex: 1;
+        }
+        section h2 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--bg-gradient-end);
+            color: var(--primary-start);
+            font-weight: 600;
         }
         .contact-links {
             display: grid;
-            gap: 1rem;
-            margin: 2rem 0;
+            gap: 0.75rem;
+            margin: 1.25rem 0;
         }
         .contact-link {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 8px;
+            gap: 12px;
+            padding: 0.875rem 1.25rem;
+            background: var(--bg-gradient-start);
+            border-radius: var(--radius-sm);
             text-decoration: none;
-            color: #2c3e50;
-            transition: all 0.3s;
+            color: var(--text-primary);
+            transition: all var(--transition);
             border: 1px solid transparent;
+            font-weight: 500;
         }
-        .contact-link:hover {
-            background: #e9ecef;
-            border: 1px solid #ced4da;
+        .contact-link:hover,
+        .contact-link:focus {
+            background: var(--white);
+            border-color: var(--border-color);
             transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+            color: var(--primary-start);
         }
-        .contact-link i, .contact-link img {
-            font-size: 1.2rem;
+        .contact-link:focus-visible {
+            outline: none;
+            box-shadow: var(--focus-ring);
         }
-        form {
-            margin-top: 2rem;
+        .contact-link i {
+            font-size: 1.1rem;
+            width: 24px;
+            text-align: center;
+            color: var(--primary-start);
         }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+        form { margin-top: 1.5rem; }
+        .form-group { margin-bottom: 1rem; }
         label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
         }
         input, textarea {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
             font-size: 1rem;
-            transition: border-color 0.3s;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background: var(--white);
         }
         input:focus, textarea:focus {
-            border-color: #2c3e50;
+            border-color: var(--primary-start);
             outline: none;
+            box-shadow: var(--focus-ring);
         }
         button {
             width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, #2c3e50, #34495e);
-            color: white;
+            padding: 0.875rem;
+            background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+            color: var(--white);
             border: none;
-            border-radius: 6px;
+            border-radius: var(--radius-sm);
             cursor: pointer;
             font-size: 1rem;
-            transition: background 0.3s, transform 0.3s;
+            font-weight: 600;
+            transition: background var(--transition), transform 0.2s;
+            margin-top: 0.5rem;
         }
         button:hover {
-            background: linear-gradient(135deg, #34495e, #2c3e50);
-            transform: scale(1.02);
+            background: linear-gradient(135deg, var(--primary-end), var(--primary-start));
+            transform: translateY(-1px);
+        }
+        button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .form-message {
+            display: none;
+            padding: 0.875rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+        .form-message.success {
+            display: block;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .form-message.error {
+            display: block;
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
         footer {
             text-align: center;
-            margin-top: 2rem;
-            padding: 1rem;
-            color: #666;
+            padding: 1.25rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: auto;
         }
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-            header h2 {
-                font-size: 1.2rem;
-            }
+            .container { padding: 1rem; }
+            header { padding: 1.25rem 1rem 1.5rem; }
+            .profile-img { width: 80px; height: 80px; }
+            header h1 { font-size: 1.5rem; }
+            header h2 { font-size: 1rem; }
+            .main-content { padding: 1.25rem; }
+            section h2 { font-size: 1.25rem; }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Гусев</h1>
-            <h2>Евгений Александрович</h2>
+            <div class="profile-wrapper">
+                <img src="evgenii.jpg" alt="Гусев Евгений Александрович" class="profile-img" loading="lazy">
+                <div>
+                    <h1>Гусев</h1>
+                    <h2>Евгений Александрович</h2>
+                </div>
+            </div>
         </div>
     </header>
     <div class="container">
@@ -145,39 +234,153 @@
                 <h2>КОНТАКТЫ</h2>
             </section>
             <section class="contact-links">
-                <a href="mailto:GusevEvgenii@hotmail.com" class="contact-link">
-                    <i class="fas fa-envelope"></i> Email
+                <a href="mailto:GusevEvgenii@hotmail.com" class="contact-link" aria-label="Написать на Email">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span>Email</span>
                 </a>
-                <a href="https://t.me/EvgeniiAGusev" target="_blank" class="contact-link">
-                    <i class="fab fa-telegram"></i> Telegram
+                <a href="https://i.delta.chat/#1619DCF61DB56653CFDB0791EA71AFC6B64463BD&i=_krxMA8Ife29bsZRk58yR1rJ&s=ITd7pd3yeBj0AQ2NtLJXv0e3&a=f5vxc3xlm%40nine.testrun.org&n=EG" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Написать в Delta Chat">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>Delta Chat</span>
                 </a>
-                <a href="https://wa.me/79920904448" target="_blank" class="contact-link">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+                <a href="https://t.me/EvgeniiAGusev" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Написать в Telegram">
+                    <i class="fab fa-telegram" aria-hidden="true"></i>
+                    <span>Telegram</span>
                 </a>
-                <a href="https://bastyon.com/evgeniiag" target="_blank" class="contact-link">
-                    <i class="fas fa-link"></i> Bastyon <!-- Generic иконка, если специфической нет -->
+                <a href="https://wa.me/79920904448" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Написать в WhatsApp">
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="https://signal.me/#eu/AwVO6erwBoJtSh6wiR2ErgrKcvFmd5kP1pnU52I3l3tOqyzBobFCP7G9EG6ifTXU" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Написать в Signal">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <span>Signal</span>
+                </a>
+                <a href="https://www.0xchat.com/link/nostr?value=nostr%3Anprofile1qqs9v2sjxzw9z2tlctpg5l9eh4apvqgw7z526qnj6r5r3rmsqt4ex8qxs5mwt" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Написать в 0xchat">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <span>0xchat</span>
+                </a>
+                <a href="#" id="nostrCopy" class="contact-link" aria-label="Скопировать Nostr ключ">
+                    <i class="fas fa-key" aria-hidden="true"></i>
+                    <span>Nostr (копировать ключ)</span>
+                </a>
+                <a href="https://matrix.to/#/@evgeniig:matrix.org" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Написать в Element">
+                    <i class="fas fa-hashtag" aria-hidden="true"></i>
+                    <span>Element</span>
+                </a>
+                <a href="sip:evgeniig@sip.linphone.org" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Позвонить через Linphone">
+                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <span>Linphone</span>
+                </a>
+                <a href="https://mega.nz/C!ScBAGAzI" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Открыть Mega">
+                    <i class="fas fa-cloud" aria-hidden="true"></i>
+                    <span>Mega</span>
+                </a>
+                <a href="https://bastyon.com/evgeniiag" class="contact-link" target="_blank" rel="noopener noreferrer" aria-label="Профиль на Bastyon">
+                    <i class="fas fa-link" aria-hidden="true"></i>
+                    <span>Bastyon</span>
                 </a>
             </section>
             <h2>НАПИСАТЬ МНЕ</h2>
-            <form action="https://formspree.io/f/xovjpabv" method="POST">
+            <div id="formMessage" class="form-message"></div>
+            <form id="contactForm" action="https://formspree.io/f/xovjpabv" method="POST">
                 <div class="form-group">
                     <label for="name">Ваше имя:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" required autocomplete="name">
                 </div>
                 <div class="form-group">
                     <label for="email">Ваш email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email" required autocomplete="email">
                 </div>
                 <div class="form-group">
                     <label for="message">Сообщение:</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit">Отправить сообщение</button>
+                <button type="submit" id="submitBtn">Отправить сообщение</button>
             </form>
         </main>
         <footer>
-            <p>© Гусев Евгений Александрович, 2025. Все права защищены.</p>
+            <p>© Гусев Евгений Александрович, 2026. Все права защищены.</p>
         </footer>
     </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = this;
+            const btn = document.getElementById('submitBtn');
+            const msg = document.getElementById('formMessage');
+            const formData = new FormData(form);
+            btn.disabled = true;
+            btn.textContent = 'Отправка...';
+            msg.className = 'form-message';
+            msg.textContent = '';
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    msg.classList.add('success');
+                    msg.textContent = 'Сообщение отправлено';
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    throw new Error(data.errors ? Object.values(data.errors)[0] : 'Ошибка отправки');
+                }
+            } catch (error) {
+                msg.classList.add('error');
+                msg.textContent = error.message || 'Произошла ошибка. Попробуйте позже.';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Отправить сообщение';
+            }
+        });
+
+        document.getElementById('nostrCopy').addEventListener('click', function(e) {
+            e.preventDefault();
+            const key = 'npub12c4pyvyu2y5hlskz3f7tn0t6zcqsau9g45p8958g8z8hqqhtjvwq9f6kk4';
+            const span = this.querySelector('span');
+            const originalText = span.textContent;
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(key).then(() => {
+                    span.textContent = 'Скопировано!';
+                    this.style.backgroundColor = '#27ae60';
+                    this.style.color = '#fff';
+                    setTimeout(() => {
+                        span.textContent = originalText;
+                        this.style.backgroundColor = '';
+                        this.style.color = '';
+                    }, 2000);
+                }).catch(() => {
+                    fallbackCopy(key, span, originalText, this);
+                });
+            } else {
+                fallbackCopy(key, span, originalText, this);
+            }
+        });
+
+        function fallbackCopy(text, span, originalText, linkEl) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                span.textContent = 'Скопировано!';
+                linkEl.style.backgroundColor = '#27ae60';
+                linkEl.style.color = '#fff';
+                setTimeout(() => {
+                    span.textContent = originalText;
+                    linkEl.style.backgroundColor = '';
+                    linkEl.style.color = '';
+                }, 2000);
+            } catch (err) {
+                alert('Не удалось скопировать ключ. Выделите и скопируйте его вручную: ' + text);
+            }
+            document.body.removeChild(textarea);
+        }
+    </script>
 </body>
 </html>
